@@ -70,4 +70,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 		return entrepriseRepoistory.findById(entrepriseId).get();	
 	}
 
+	public Entreprise findByName(String name) {
+		return entrepriseRepoistory.findByName(name);
+	}
 }

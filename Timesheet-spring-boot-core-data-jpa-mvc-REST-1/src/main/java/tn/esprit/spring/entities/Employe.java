@@ -38,10 +38,7 @@ public class Employe implements Serializable {
 	private String email;
 
 	private boolean isActif;
-	
-	@Enumerated(EnumType.STRING)
-	//@NotNull
-	private Role role;
+
 	
 	//@JsonBackReference  
 	@JsonIgnore
@@ -56,22 +53,19 @@ public class Employe implements Serializable {
 	
 	@JsonIgnore
 	//@JsonBackReference
-	@OneToMany(mappedBy="employe")
-	private List<Timesheet> timesheets;
+
 	
 	
 	public Employe() {
 		super();
 	}
-	
-	public Employe(String nom, String prenom, String email, boolean isActif, Role role) {
+
+	public Employe(String nom, String prenom, String email, boolean isActif) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
 		this.isActif = isActif;
-		this.role = role;
 	}
-	
 	public int getId() {
 		return id;
 	}
@@ -112,13 +106,6 @@ public class Employe implements Serializable {
 		this.isActif = isActif;
 	}
 
-	public Role getRole() {
-		return role;
-	}
-
-	public void setRole(Role role) {
-		this.role = role;
-	}
 
 	public List<Departement> getDepartements() {
 		return departements;
@@ -136,14 +123,5 @@ public class Employe implements Serializable {
 		this.contrat = contrat;
 	}
 
-	public List<Timesheet> getTimesheets() {
-		return timesheets;
-	}
-
-	public void setTimesheets(List<Timesheet> timesheets) {
-		this.timesheets = timesheets;
-	}
-	
-	
 	
 }
